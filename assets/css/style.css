@@ -29,6 +29,10 @@ a{text-decoration: none !important;}
     .section__gap{padding: 100px 0;}
 }
 
+@media screen and (max-width: 575px) {
+    .section__gap{padding: 50px 0;}
+}
+
 :root{
     --p--primary : #33334D;
     --p--secondary: #2A63BD;
@@ -173,9 +177,18 @@ button.applyBtn:hover{
     left: 0;
     background-color: #f7f7f7;
     padding: 40px;
-    width: 50%;
+    width: 0;
+    opacity: 0;
+    overflow: hidden;
     height: 100vh;
-    display: none;
+    /* transform: scaleX(0);
+    transform-origin: left; */
+    transition: 0.5s ease-in-out;
+}
+
+.open{
+    width: 50%;
+    opacity: 1;
 }
 
 .mobile__menu svg{
@@ -197,6 +210,9 @@ button.applyBtn:hover{
 @media screen and (max-width: 700px) {
     .mobile__menu{
         padding: 25px;
+    }
+
+    .open{
         width: 100%;
     }
 }
@@ -267,6 +283,12 @@ button.applyBtn:hover{
     line-height: 24px;
 }
 
+@media screen and (max-width: 767px) {
+    .bootContent{
+        padding: 22px;
+    }
+}
+
 /* =====bootcamp section css end here===== */
 
 
@@ -324,8 +346,14 @@ input#phone{
 /*  */
 
 @media screen and (max-width: 991px) {
-    .service__inner{
+    /* .service__inner{
         padding: 54px;
+    } */
+}
+
+@media screen and (max-width: 767px) {
+    .service__inner{
+        padding: 37px;
     }
 }
 
@@ -340,6 +368,7 @@ input#phone{
 
     .service__form form input{
         margin-bottom: 16px;
+        padding-left: 0;
     }
 
     .iti.iti--allow-dropdown{
@@ -408,12 +437,17 @@ input#phone{
         landing page start here
 ========================================*/
 .landing__banner{
-    background-image: url(../image/section/banner2.png);
-    background-repeat: no-repeat;
+    /* background-image: url(../image/section/banner2.png);
+    background-repeat: no-repeat; */
+}
+
+.hellosss{
+    /* background-image: url(../image/section/banner2.png);
+    height: 100%; */
 }
 
 .landing__content {
-    padding: 86px 0;
+    /* padding: 86px 0; */
 }
 
 .landing__content h2 {
@@ -444,6 +478,8 @@ input#phone{
     width: 100%;
     max-width: 563px;
 }
+
+
 
 .session .box {
     text-align: center;
@@ -488,6 +524,33 @@ input#phone{
 .session .box h4{
     font-size: var(--font-20);
     font-family: var(--p--roboto);
+}
+
+@media screen and (max-width: 991px) {
+    .session .box{
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .session{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .landing__content .applyBtn{
+        display: block;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .landing__content h2{
+        font-size: 35px ;
+    }
+    .landing__content .info h4{
+        font-size: 20px;
+    }
 }
 
 /* =====program section css start here===== */
@@ -583,7 +646,7 @@ input#phone{
 
 .overview {
     font-size: 14px;
-    color: var;
+    color: var(--p--primary);
     position: relative;
     height: 90px;
     /* line-height: 90px; */
@@ -594,6 +657,9 @@ input#phone{
     max-width: 345px;
     text-align: center;
     margin-bottom: 26px;
+
+    display: flex;
+    align-items: center;
 }
 
 .overview p{
@@ -608,10 +674,11 @@ input#phone{
     top: 50%;
     transform: translateY(-50%);
 }
-
-.preBox{
-    /* margin-bottom: 26px; */
-} 
+@media screen and (max-width: 575px) {
+    .program__title h3{
+        font-size: 24px;
+    }
+}
 
 /* =====program section css end here===== */
 
@@ -619,6 +686,59 @@ input#phone{
 .application__section{
     background: #F5F9FA;
 }
+
+.application__inner{
+    padding: 37px 97px;
+    background-color: #fff;
+    border-radius: 10px;
+    font-family: var(--p--poppins);
+}
+
+.application.service__form form input{
+    width: 100% !important;
+}
+
+.application h4 {
+    margin-bottom: 40px;
+    font-size: 24px;
+    line-height: 36px;
+    font-family: var(--p--roboto);
+}
+
+.application form p{
+    font-size: 14px;
+    margin-top: 26px;
+}
+
+.benifit {
+    padding: 16px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    margin-bottom: 26px;
+}
+
+.benifit p {
+    font-size: var(--font-16);
+    font-weight: 400;
+    margin-left: 7px;
+}
+
+.iti.iti--allow-dropdown {
+    width: 100%;
+    margin-bottom: 26px;
+}
+
+@media screen and (max-width: 767px) {
+    .application__inner{
+        padding: 37px;
+    }
+
+    .flexColumn{
+        flex-direction: column-reverse;
+    }
+}
+
+  
 /* =====application section end here===== */
 /* ====================================
         landing page end here
